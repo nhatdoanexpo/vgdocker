@@ -1,0 +1,7 @@
+# This Dockerfile is used to build an headles vnc image based on Debian
+
+FROM nhatdoanexpo/vetgodeploy:v1.0
+WORKDIR $HOME
+COPY csvetgoapp/zalo-bot-1.0.0.jar .
+COPY csvetgoapp/browser-plugin browser-plugin
+CMD ["java", "-Djava.awt.headless=false", "-jar", "zalo-bot-1.0.0.jar"]
